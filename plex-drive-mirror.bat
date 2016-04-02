@@ -18,5 +18,5 @@ EXIT /B %ERRORLEVEL%
 :: (arguments: Name, SourceDirectory, DestinationDirectory)
 :SYNC_DRIVE
 @ECHO Starting sync for %~1 (%date% %time%)... >> C:\plex_sync_logs\%~1%-log.txt
-ROBOCOPY %~2 %~3 /MIR /XJD /MT:4 /R:10 /W:60 /XA:SHT /log+:C:\plex_sync_logs\%~1%-log.txt /XD _temp* $* "System Volume Information*" /XF *.dat *.sys *.db *.log
+ROBOCOPY %~2 %~3 /MIR /XJD /MT:4 /R:10 /W:60 /XA:SHT /NP /log+:C:\plex_sync_logs\%~1%-log.txt /XD _temp* $* Recovery "System Volume Information*" /XF *.dat *.sys *.db *.log
 EXIT /B 0
